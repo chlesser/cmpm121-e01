@@ -40,10 +40,11 @@
       let target = null;
       // Pick the living enemy with the greatest health.
       for (const enemy of enemies) {
-        //ensure a suitable candidate
+        //ensure the new potential target is an alive enemy
         if(enemy && enemy.health > 0)
         {
-          //if there is no target yet or this enemy has as much or more health than the current target, set it
+          //if there is no target yet, choose automatically.
+          //if this enemy has as much or more health than the current target, set it as the new one.
           if(target == null || enemy.health >= target.health)
           {
             target = enemy;
